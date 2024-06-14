@@ -56,7 +56,8 @@ function saveCSV({ codigo, statusEntrega, dataHora, local }, fileName) {
 
 
 async function main() {
-  const url = "https://www.linkcorreios.com.br/?id=DO+740+707+842+BR";
+  const id = "DO+740+707+842+BR"
+  const url = `https://www.linkcorreios.com.br/?id=${id}`;
   const content = await fetchContent(url);
   saveCSV(content, 'output.csv');
   console.log(`As informações foram salvas em output.csv`);
